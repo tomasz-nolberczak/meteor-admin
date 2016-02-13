@@ -49,6 +49,21 @@
 		"changeSkinLabel": "Motyw panelu administratora"
 	},
 
+	"adminSkinName": {
+		"black": "Czarny",
+		"blackLight": "Czarny - jasny",
+		"blue": "Niebieski",
+		"blueLight": "Niebieski - jasny",
+		"green": "Zielony",
+		"greenLight": "Zielony - jasny",
+		"purple": "Purpurowy",
+		"purpleLight": "Purpurowy - jasny",
+		"red": "Czerwony",
+		"redLight": "Czerwony - jasny",
+		"yellow": "Żółty",
+		"yellowLight": "Żółty - jasny"
+	},
+
 	/**
 	 * Server methods
 	 */

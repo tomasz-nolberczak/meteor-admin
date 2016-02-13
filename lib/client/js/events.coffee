@@ -30,11 +30,16 @@ Template.AdminHeader.events
 
 Template.AdminDashboardSettings.events
 	'change #adminDashboardLanguage': (e, t) ->
-		console.log(e.target.value)
-		TAPi18n.setLanguage(e.target.value)
+		language = e.target.value
+		Meteor.call 'adminSetDashboardLanguage', Meteor.user()._id, language, (e,r)->
+			if e
+				console.log e
+			else
+				Session.set "adminLanguage", language
+				TAPi18n.setLanguage language
 	'change #adminDashboardSkin': (e, t) ->
-		console.log(e.target.value)
-		_id = Session.get 'admin_id'
-		Session.set 'adminSettings.skin', e.target.value
-		Meteor.users.update({_id: _id}, {$set: {adminSettings: {skin: e.target.value}}})
-		# Meteor.call 'adminSetDashboardSkin', _id, e.target.value
+		Meteor.call 'adminSetDashboardSkin', Meteor.user()._id, e.target.value, (e,r)->
+			if e
+				console.log e
+			else
+				window.location.reload()

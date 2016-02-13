@@ -60,7 +60,7 @@ Package.on_use(function(api){
     'lib/client/js/events.coffee',
     'lib/client/js/slim_scroll.js',
     'lib/client/js/autoForm.coffee',
-    'lib/client/js/languages.js',
+    'lib/client/js/admin_settings.coffee',
     
     ], 'client');
 

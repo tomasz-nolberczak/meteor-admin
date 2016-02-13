@@ -101,5 +101,18 @@ Meteor.methods
 			sort: _sort
 
 	adminSetDashboardSkin: (_id, skin)->
-		check arguments, [Match.Any]
-		Meteor.users.update(_id, {adminSettings: {skin: skin}})
+		check _id, String
+		check skin, String
+		Meteor.users.update(_id, {$set: {'adminSettings.skin': skin}})
+
+	adminSetDashboardLanguage: (_id, language)->
+		check _id, String
+		check language, String
+		Meteor.users.update(_id, {$set: {'adminSettings.language': language}})
+
+	adminGetSettings: (_id)->
+		user = Meteor.users.findOne _id
+		if (user.adminSettings != 'undefined')
+			user.adminSettings
+		else
+			{language: 'pl', skin: 'purple'}

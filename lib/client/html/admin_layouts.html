@@ -2,37 +2,39 @@
   {{#if AdminConfig}}
   {{#if isInRole 'admin'}}
   <div class="admin-layout">
-    {{# AdminLTE skin=admin_skin }}
-      {{> AdminHeader }}
-      {{> AdminSidebar }}
-      <div class="content-wrapper" style="min-height: {{minHeight}}">
-        <section class="content-header">
-          <h1>
-            {{$.Session.get 'admin_title'}}
-            <small>{{$.Session.get 'admin_subtitle'}}</small>
-          </h1>
-          <ol class="breadcrumb">
-            <li><a href="/admin/">{{_ "layout.dashboard"}}</a></li>
-            {{#if $.Session.get 'admin_collection_name'}}
-              <li><a href="/admin/{{$.Session.get 'admin_collection_name'}}/">
-                {{adminCollectionLabel admin_collection_name}}
-              </a></li>
-            {{/if}}
+    {{#if admin_skin_ready}}
+      {{# AdminLTE skin=admin_skin sidebarMini=true }}
+        {{> AdminHeader }}
+        {{> AdminSidebar }}
+        <div class="content-wrapper" style="min-height: {{minHeight}}">
+          <section class="content-header">
+            <h1>
+              {{$.Session.get 'admin_title'}}
+              <small>{{$.Session.get 'admin_subtitle'}}</small>
+            </h1>
+            <ol class="breadcrumb">
+              <li><a href="/admin/">{{_ "layout.dashboard"}}</a></li>
+              {{#if $.Session.get 'admin_collection_name'}}
+                <li><a href="/admin/{{$.Session.get 'admin_collection_name'}}/">
+                  {{adminCollectionLabel admin_collection_name}}
+                </a></li>
+              {{/if}}
 
-            {{#if $.Session.equals 'admin_collection_page' 'new'}}
-              <li>{{_ "layout.new"}}</li>
-            {{/if}}
+              {{#if $.Session.equals 'admin_collection_page' 'new'}}
+                <li>{{_ "layout.new"}}</li>
+              {{/if}}
 
-            {{#if $.Session.equals 'admin_collection_page' 'edit'}}
-              <li>{{_ "layout.edit"}}</li>
-            {{/if}}
-          </ol>
-        </section>
-        <section class="content">
-          {{> yield }}
-        </section>
-      </div>
-    {{/ AdminLTE }}
+              {{#if $.Session.equals 'admin_collection_page' 'edit'}}
+                <li>{{_ "layout.edit"}}</li>
+              {{/if}}
+            </ol>
+          </section>
+          <section class="content">
+            {{> yield }}
+          </section>
+        </div>
+      {{/ AdminLTE }}
+    {{/if}}
   </div>
   {{> AdminDeleteModal }}
   {{else}}

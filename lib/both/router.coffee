@@ -21,6 +21,16 @@
 		Session.set 'admin_id', null
 		Session.set 'admin_doc', null
 
+		if not Session.get "admin_skin_loaded"
+			Session.set "admin_skin_loaded", false
+			Session.set "admin_skin", false
+			Session.set "admin_language", false
+			Meteor.call 'adminGetSettings', Meteor.userId(), (e,r)->
+				Session.set "admin_skin", r.skin
+				Session.set "admin_language", r.language
+				Session.set "admin_skin_loaded", true
+				TAPi18n.setLanguage r.language
+
 		if not Roles.userIsInRole Meteor.userId(), ['admin']
 			Meteor.call 'adminCheckAdmin'
 			if typeof AdminConfig?.nonAdminRedirectRoute == 'string'
@@ -94,5 +104,3 @@ Router.route "adminDashboardSettings",
 	onAfterAction: ->
 		Session.set 'admin_title', 'Settings'
 		Session.set 'admin_subtitle', 'Change dashboard settings'
-		Session.set 'admin_id', @params._id
-		Session.set 'admin_doc', Meteor.users.findOne({_id:@params._id})

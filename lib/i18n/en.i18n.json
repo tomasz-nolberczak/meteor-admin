@@ -52,6 +52,21 @@
 		"changeSkinLabel": "Skin of dashboard"
 	},
 
+	"adminSkinName": {
+		"black": "Black",
+		"blackLight": "Black-light",
+		"blue": "Blue",
+		"blueLight": "Blue-light",
+		"green": "Green",
+		"greenLight": "Green-light",
+		"purple": "Purple",
+		"purpleLight": "Purple-light",
+		"red": "Red",
+		"redLight": "Red-light",
+		"yellow": "Yellow",
+		"yellowLight": "Yellow-light"
+	},
+
 	/**
 	 * Server methods
 	 */

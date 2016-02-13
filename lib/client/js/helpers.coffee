@@ -21,17 +21,11 @@ adminCollections = ->
 UI.registerHelper 'AdminConfig', ->
 	AdminConfig if typeof AdminConfig != 'undefined'
 
+UI.registerHelper 'admin_skin_ready', ->
+	Session.get "admin_skin_loaded"
+
 UI.registerHelper 'admin_skin', ->
-	user = Meteor.user()
-	console.log user
-	if AdminConfig?.skin
-		AdminConfig?.skin
-	else if typeof user.adminSettings != 'undefined' and typeof user.adminSettings.skin != 'undefined'
-		user.adminSettings.skin
-	else if Session.get('adminSettings.skin')
-		Session.get('adminSettings.skin')
-	else
-		'purple'
+	Session.get "admin_skin"
 
 UI.registerHelper 'admin_collections', adminCollections
 
