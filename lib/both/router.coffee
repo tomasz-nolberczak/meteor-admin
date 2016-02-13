@@ -102,5 +102,5 @@ Router.route "adminDashboardSettings",
 	action: ->
 		@render()
 	onAfterAction: ->
-		Session.set 'admin_title', 'Settings'
-		Session.set 'admin_subtitle', 'Change dashboard settings'
+		Session.set 'admin_title', 'Ustawienia'
+		Session.set 'admin_subtitle', 'Zmień ustawienia panelu administratora'

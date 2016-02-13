@@ -4,6 +4,8 @@ Meteor Admin po polsku
 ======================
 Meteor Admin i18n to rozwiązanie dla osób, które chcą, aby ich ulubiony dashboard był w języku ojczystym. 
 
+![alt tag](https://raw.githubusercontent.com/tomasz-nolberczak/meteor-admin/master/readme/dashboard.jpg)
+
 Dodana została zakładka **Ustawienia** (w prawym górnym rogu, rozwijalne menu). Dzięki niej możemy ustawić domyślny język dla panelu - inny, niż angielski. W obecnej wersji znalazło się wsparcie wyłącznie dla języka polskiego. Nie jest ono jeszcze skończone, ilość przetłumaczonych fraz sięga około 80%. Jeżeli chcesz przetłumaczyć/dodać tłumaczenie dla innego języka - lub poprawić bieżące tłumaczenie języka polskiego - zapraszam do kontaktu.
 
 Mój fork korzysta z paczki [tap-i18n](https://github.com/TAPevents/tap-i18n). Dziękuję serdecznie jej autorowi za ciężką pracę.
