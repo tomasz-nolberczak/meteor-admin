@@ -1,6 +1,6 @@
 Package.describe({
   name: "tomasz-nolberczak:admin",
-  summary: "A complete admin dashboard solution with i18n support",
+  summary: "Meteor Admin with language support",
   version: "0.1.0",
   git: "https://github.com/tomasz-nolberczak/meteor-admin"
 });
