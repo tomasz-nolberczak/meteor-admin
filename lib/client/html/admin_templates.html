@@ -54,8 +54,8 @@
 			{{> tabular table=admin_table class="table dataTable"}}
 		{{else}}
 			<div class="alert alert-info">
-				<p>There are no visible items in this collection.</p>
-				<p><a href="{{newPath}}" class="btn btn-primary"><i class="fa fa-plus"></i> Add one</a></p>
+				<p>{{_ "templates.noItems"}}</p>
+				<p><a href="{{newPath}}" class="btn btn-primary"><i class="fa fa-plus"></i> {{_ "templates.addOne"}}</a></p>
 			</div>
 		{{/if}}
 	{{/if}}
@@ -77,7 +77,7 @@
 
 			{{/if}}
 
-			<button type="submit" class="btn btn-primary">Add User</button>
+			<button type="submit" class="btn btn-primary">{{_ "templates.addUser"}}</button>
 
 			{{/autoForm}}
 		</div>
@@ -101,9 +101,9 @@
 			<button class="btn btn-default btn-xs btn-add-role" role="{{this}}" user="{{admin_current_id}}">{{this}}</button>
 			{{/each}}
 			{{#if roles}}
-			<p style="margin-top:5px;">Click a role to toggle it.</p>
+			<p style="margin-top:5px;">{{_ "templates.clickToToggle"}}</p>
 			{{else}}
-			<p>User not in any roles. Click a role to add it to a user.</p>
+			<p>{{_ "templates.addRoleToUser"}}</p>
 			{{/if}}
 
 			<hr/>
@@ -114,8 +114,8 @@
 				<input value="{{admin_current_id}}" type="text" name="_id" omitfields="createdAtupdatedAt" required="" data-schema-key="_id" class="form-control" autocomplete="off" />
 				<span class="help-block"></span>
 			</div>
-			<p>Send a reset password email to {{admin_current_doc.emails.[0].address}}</p>
-			<button type="submit" class="btn btn-primary btn-sm">Send Email</button>
+			<p>{{_ "templates.sendResetPassword"}} {{admin_current_doc.emails.[0].address}}</p>
+			<button type="submit" class="btn btn-primary btn-sm">{{_ "templates.sendEmail"}}</button>
 			{{/autoForm}}
 
 			<hr/>
@@ -127,7 +127,7 @@
 				<span class="help-block"></span>
 			</div>
 			{{>afQuickField name="password"}}
-			<button type="submit" class="btn btn-primary btn-sm">Change Password</button>
+			<button type="submit" class="btn btn-primary btn-sm">{{_ "templates.changePassword"}}</button>
 			{{/autoForm}}
 		</div>
 	</div>
@@ -157,10 +157,10 @@
 
 <template name="adminEditBtn">
 	<a href="{{path}}" class="hidden-xs btn btn-xs btn-primary"><i class="fa fa-pencil"></i></a>
-	<a href="{{path}}" class="visible-xs btn btn-sm btn-primary"><i class="fa fa-pencil"></i> Edit</a>
+	<a href="{{path}}" class="visible-xs btn btn-sm btn-primary"><i class="fa fa-pencil"></i> {{_ "templates.edit"}}</a>
 </template>
 
 <template name="adminDeleteBtn">
 	<a data-toggle="modal" doc="{{_id}}" href='#admin-delete-modal' class="hidden-xs btn btn-xs btn-danger btn-delete"><i class="fa fa-times" doc="{{_id}}"></i></a>
-	<a data-toggle="modal" doc="{{_id}}" href='#admin-delete-modal' class="visible-xs btn btn-sm btn-danger btn-delete"><i class="fa fa-times" doc="{{_id}}"></i> Delete</a>
+	<a data-toggle="modal" doc="{{_id}}" href='#admin-delete-modal' class="visible-xs btn btn-sm btn-danger btn-delete"><i class="fa fa-times" doc="{{_id}}"></i> {{_ "templates.delete"}}</a>
 </template>

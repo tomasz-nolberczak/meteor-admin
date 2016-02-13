@@ -1,0 +1,119 @@
+{
+	"header": {
+		"panelName": "Panel administratora",
+		"toggleNavigation": "Pokaż/ukryj nawigację",
+		"home": "Strona główna",
+		"admin": "Administrator",
+		"yourProfile": "Twój profil",
+		"settings": "Ustawienia",
+		"signOut": "Wyloguj się"
+	},
+
+	"layout": {
+		"dashboard": "Panel administratora",
+		"new": "Nowy",
+		"edit": "Edytuj",
+		"deleteModal": {
+			"confirmHeader": "Potwierdź usuwanie",
+			"paragraph": "Czy na pewno chcesz to usunąć?",
+			"close": "Zamknij",
+			"delete": "Usuń"
+		}
+	},
+
+	"sidebar": {
+		"dashboard": "Panel administratora",
+		"new": "Nowy",
+		"viewAll": "Pokaż wszystkie"
+	},
+
+	"templates": {
+		"noItems": "Nie ma żadnych rekordów w tej kolekcji",
+		"addOne": "Dodaj",
+		"addUser": "Dodaj Użytkownika",
+		"clickToToggle": "Kliknij na rolę, aby ją włączyć/wyłączyć",
+		"addRoleToUser": "Użytkownik nie jest przypisany do żadnej z ról. Kliknij w jedną, aby dodać.",
+		"sendResetPassword": "Wyślij e-mail z linkiem resetującym hasło",
+		"sendEmail": "Wyślij e-mail",
+		"changePassword": "Zmień hasło",
+		"edit": "Edytuj",
+		"delete": "Usuń"
+	},
+
+	"widgets": {
+		"seeAll": "Zobacz wszystkie"
+	},
+
+	"settings": {
+		"changeLanguageLabel": "Język w panelu administratora",
+		"changeSkinLabel": "Motyw panelu administratora"
+	},
+
+	/**
+	 * Server methods
+	 */
+	"methods": {
+		"adminNewUser": {
+			"emailSubject": "Twoje konto zostało utworzone",
+			"htmlTemplate": "Konto zostało utworzone dla użytkownika %s z hasłem %s"
+		},
+
+		"adminSendResetPasswordEmail": {
+			"passwordChange": "Zmiana hasła dla użytkownika %s"
+		},
+
+		"adminChangePassword": {
+			"passwordChange": "Zmiana hasła dla użytkownika %s",
+			"label": "Wyślij e-mail do użytkownika z nowym hasłem"
+		},
+
+		"adminCheckAdmin": {
+			"addingAdminUser": "Dodano nowego administratora: %s",
+			"makingFirstUserAdmin": "Tworzenie pierwszego użytkownika w kolekcji jako administratora: %s"
+		}
+	},
+
+	/**
+	 * Client functions
+	 */
+	"autoForm": {
+		"insert": {
+			"onSuccess": "Utworzono!"
+		},
+
+		"update": {
+			"onSuccess": "Zaktualizowano!"
+		},
+
+		"newUser": {
+			"onSuccess": "Użytkownik dodany"
+		},
+
+		"updateUser": {
+			"onSuccess": "Użytkownik zaktualizowany"
+		},
+
+		"sendResetPasswordEmail": {
+			"onSuccess": "Wiadomość wysłana"
+		},
+
+		"changePassword": {
+			"onSuccess": "Hasło zresetowane"
+		}
+	},
+
+	"events": {
+		"addingUser": "dodaję użytkownika",
+		"removingUser": "usuwam użytkownika"
+	},
+
+	"helpers": {
+		"usersLabel": "Użytkownicy"
+	},
+
+	"templatesScript": {
+		"search": "Szukaj",
+		"new": "Nowy",
+		"edit": "Edytuj"
+	}
+}

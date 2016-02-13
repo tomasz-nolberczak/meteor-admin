@@ -1,6 +1,10 @@
 {
   "dependencies": [
     [
+      "tap:i18n",
+      "1.7.0"
+    ],
+    [
       "accounts-base",
       "1.1.2"
     ],

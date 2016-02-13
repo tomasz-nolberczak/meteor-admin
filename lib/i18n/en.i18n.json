@@ -1,0 +1,122 @@
+{
+	/**
+	 * HTML Templates
+	 */
+	"header": {
+		"panelName": "Admin",
+		"toggleNavigation": "Toggle navigation",
+		"home": "Home",
+		"admin": "Admin",
+		"yourProfile": "Your profile",
+		"settings": "Settings",
+		"signOut": "Sign out"
+	},
+
+	"layout": {
+		"dashboard": "Dashboard",
+		"new": "New",
+		"edit": "Edit",
+		"deleteModal": {
+			"confirmHeader": "Confirm delete",
+			"paragraph": "Are you sure you want to delete this?",
+			"close": "Close",
+			"delete": "Delete"
+		}
+	},
+
+	"sidebar": {
+		"dashboard": "Dashboard",
+		"new": "New",
+		"viewAll": "View All"
+	},
+
+	"templates": {
+		"noItems": "There are no visible items in this collection.",
+		"addOne": "Add one",
+		"addUser": "Add User",
+		"clickToToggle": "Click a role to toggle it.",
+		"addRoleToUser": "User not in any roles. Click a role to add it to a user.",
+		"sendResetPassword": "Send a reset password email to",
+		"sendEmail": "Send Email",
+		"changePassword": "Change Password",
+		"edit": "Edit",
+		"delete": "Delete"
+	},
+
+	"widgets": {
+		"seeAll": "See all"
+	},
+
+	"settings": {
+		"changeLanguageLabel": "Language of dashboard",
+		"changeSkinLabel": "Skin of dashboard"
+	},
+
+	/**
+	 * Server methods
+	 */
+	"methods": {
+		"adminNewUser": {
+			"emailSubject": "Your account has been created",
+			"htmlTemplate": "'You've just had an account created for %s with password %s"
+		},
+
+		"adminSendResetPasswordEmail": {
+			"passwordChange": "Changing password for user %s"
+		},
+
+		"adminChangePassword": {
+			"passwordChange": "Changing password for user %s",
+			"label": "Email user their new password"
+		},
+
+		"adminCheckAdmin": {
+			"addingAdminUser": "Adding admin user: %s",
+			"makingFirstUserAdmin": "Making first user admin: %s"
+		}
+	},
+
+	/**
+	 * Client functions
+	 */
+	"autoForm": {
+		"insert": {
+			"onSuccess": "Successfully created"
+		},
+
+		"update": {
+			"onSuccess": "Successfully updated"
+		},
+
+		"newUser": {
+			"onSuccess": "Created user"
+		},
+
+		"updateUser": {
+			"onSuccess": "Updated user"
+		},
+
+		"sendResetPasswordEmail": {
+			"onSuccess": "Email sent"
+		},
+
+		"changePassword": {
+			"onSuccess": "Password reset"
+		}
+	},
+
+	"events": {
+		"addingUser": "adding user",
+		"removingUser": "removing user"
+	},
+
+	"helpers": {
+		"usersLabel": "Users"
+	},
+
+	"templates": {
+		"search": "Search",
+		"new": "New",
+		"edit": "Edit"
+	}
+}

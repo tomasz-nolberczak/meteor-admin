@@ -20,7 +20,7 @@ Template.AdminDashboardView.rendered = ->
 
 	filter.html '
 		<div class="input-group">
-			<input type="search" class="form-control input-sm" placeholder="Search"></input>
+			<input type="search" class="form-control input-sm" placeholder="' + TAPi18n.__("templatesScript.search") + '"></input>
 			<div class="input-group-btn">
 				<button class="btn btn-sm btn-default">
 					<i class="fa fa-search"></i>
@@ -48,8 +48,8 @@ Template.AdminDashboardView.helpers
 	hasDocuments: ->
 		AdminCollectionsCount.findOne({collection: Session.get 'admin_collection_name'})?.count > 0
 	newPath: ->
-		Router.path 'adminDashboard' + Session.get('admin_collection_name') + 'New'
+		Router.path 'adminDashboard' + Session.get('admin_collection_name') + TAPi18n.__("templatesScript.new")
 
 Template.adminEditBtn.helpers
 	path: ->
-		Router.path "adminDashboard" + Session.get('admin_collection_name') + "Edit", _id: @_id
+		Router.path "adminDashboard" + Session.get('admin_collection_name') + TAPi18n.__("templatesScript.edit"), _id: @_id

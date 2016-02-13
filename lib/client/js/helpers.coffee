@@ -9,7 +9,7 @@ adminCollections = ->
 	collections.Users =
 		collectionObject: Meteor.users
 		icon: 'user'
-		label: 'Users'
+		label: TAPi18n.__("helpers.usersLabel")
 
 	_.map collections, (obj, key) ->
 		obj = _.extend obj, {name: key}
@@ -22,7 +22,16 @@ UI.registerHelper 'AdminConfig', ->
 	AdminConfig if typeof AdminConfig != 'undefined'
 
 UI.registerHelper 'admin_skin', ->
-	AdminConfig?.skin or 'blue'
+	user = Meteor.user()
+	console.log user
+	if AdminConfig?.skin
+		AdminConfig?.skin
+	else if typeof user.adminSettings != 'undefined' and typeof user.adminSettings.skin != 'undefined'
+		user.adminSettings.skin
+	else if Session.get('adminSettings.skin')
+		Session.get('adminSettings.skin')
+	else
+		'purple'
 
 UI.registerHelper 'admin_collections', adminCollections
 

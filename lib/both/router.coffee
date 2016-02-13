@@ -82,3 +82,17 @@ Router.route "adminDashboardUsersEdit",
 		Session.set 'admin_collection_name', 'Users'
 		Session.set 'admin_id', @params._id
 		Session.set 'admin_doc', Meteor.users.findOne({_id:@params._id})
+
+Router.route "adminDashboardSettings",
+	path: "/admin/settings"
+	template: "AdminDashboardSettings"
+	controller: 'AdminController'
+	data: ->
+		user: Meteor.users.find(@params._id).fetch()
+	action: ->
+		@render()
+	onAfterAction: ->
+		Session.set 'admin_title', 'Settings'
+		Session.set 'admin_subtitle', 'Change dashboard settings'
+		Session.set 'admin_id', @params._id
+		Session.set 'admin_doc', Meteor.users.findOne({_id:@params._id})

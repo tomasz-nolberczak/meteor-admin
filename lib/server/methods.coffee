@@ -40,8 +40,8 @@ Meteor.methods
 					Email.send
 						to: user.email
 						from: AdminConfig.fromEmail
-						subject: 'Your account has been created'
-						html: 'You\'ve just had an account created for ' + Meteor.absoluteUrl() + ' with password ' + doc.password
+						subject: TAPi18n.__("methods.adminNewUser.emailSubject")
+						html: TAPi18n.__("methods.adminNewUser.htmlTemplate", Meteor.absoluteUrl(), doc.password)
 
 				if not doc.sendPassword
 					Accounts.sendEnrollmentEmail _id
@@ -56,15 +56,15 @@ Meteor.methods
 	adminSendResetPasswordEmail: (doc)->
 		check arguments, [Match.Any]
 		if Roles.userIsInRole this.userId, ['admin']
-			console.log 'Changing password for user ' + doc._id
+			console.log TAPi18n.__("methods.adminSendResetPasswordEmail.passwordChange", doc._id)
 			Accounts.sendResetPasswordEmail(doc._id)
 
 	adminChangePassword: (doc)->
 		check arguments, [Match.Any]
 		if Roles.userIsInRole this.userId, ['admin']
-			console.log 'Changing password for user ' + doc._id
+			console.log TAPi18n.__("methods.adminChangePassword.passwordChange", doc._id)
 			Accounts.setPassword(doc._id, doc.password)
-			label: 'Email user their new password'
+			label: TAPi18n.__("methods.adminChangePassword.label")
 
 	adminCheckAdmin: ->
 		check arguments, [Match.Any]
@@ -74,15 +74,15 @@ Meteor.methods
 			if typeof Meteor.settings.adminEmails != 'undefined'
 				adminEmails = Meteor.settings.adminEmails
 				if adminEmails.indexOf(email) > -1
-					console.log 'Adding admin user: ' + email
+					console.log TAPi18n.__("methods.adminCheckAdmin.addingAdminUser", email)
 					Roles.addUsersToRoles this.userId, ['admin'], Roles.GLOBAL_GROUP
 			else if typeof AdminConfig != 'undefined' and typeof AdminConfig.adminEmails == 'object'
 				adminEmails = AdminConfig.adminEmails
 				if adminEmails.indexOf(email) > -1
-					console.log 'Adding admin user: ' + email
+					console.log TAPi18n.__("methods.adminCheckAdmin.addingAdminUser", email)
 					Roles.addUsersToRoles this.userId, ['admin'], Roles.GLOBAL_GROUP
 			else if this.userId == Meteor.users.findOne({},{sort:{createdAt:1}})._id
-				console.log 'Making first user admin: ' + email
+				console.log TAPi18n.__("methods.adminCheckAdmin.makingFirstUserAdmin", email)
 				Roles.addUsersToRoles this.userId, ['admin']
 
 	adminAddUserToRole: (_id,role)->
@@ -99,3 +99,7 @@ Meteor.methods
 		check arguments, [Match.Any]
 		global.AdminPages[collection].set
 			sort: _sort
+
+	adminSetDashboardSkin: (_id, skin)->
+		check arguments, [Match.Any]
+		Meteor.users.update(_id, {adminSettings: {skin: skin}})

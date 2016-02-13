@@ -1,8 +1,8 @@
 Package.describe({
-  name: "yogiben:admin",
-  summary: "A complete admin dashboard solution",
-  version: "1.2.6",
-  git: "https://github.com/yogiben/meteor-admin"
+  name: "tomasz-nolberczak:admin",
+  summary: "A complete admin dashboard solution with i18n support",
+  version: "0.1.0",
+  git: "https://github.com/tomasz-nolberczak/meteor-admin"
 });
 
 Package.on_use(function(api){
@@ -27,7 +27,8 @@ Package.on_use(function(api){
     'aldeed:tabular@1.4.0',
     'meteorhacks:unblock@1.1.0',
     'zimme:active-route@2.3.2',
-    'mfactory:admin-lte@0.0.2'
+    'mfactory:admin-lte@0.0.2',
+    'tap:i18n@1.7.0'
     ],
     both);
 
@@ -40,7 +41,9 @@ Package.on_use(function(api){
     'lib/both/router.coffee',
     'lib/both/utils.coffee',
     'lib/both/startup.coffee',
-    'lib/both/collections.coffee'
+    'lib/both/collections.coffee',
+    'lib/i18n/en.i18n.json',
+    'lib/i18n/pl.i18n.json',
     ], both);
 
   api.add_files([
@@ -49,13 +52,16 @@ Package.on_use(function(api){
     'lib/client/html/admin_layouts.html',
     'lib/client/html/admin_sidebar.html',
     'lib/client/html/admin_header.html',
+    'lib/client/html/admin_settings.html',
     'lib/client/css/admin-custom.less',
     'lib/client/js/admin_layout.js',
     'lib/client/js/helpers.coffee',
     'lib/client/js/templates.coffee',
     'lib/client/js/events.coffee',
     'lib/client/js/slim_scroll.js',
-    'lib/client/js/autoForm.coffee'
+    'lib/client/js/autoForm.coffee',
+    'lib/client/js/languages.js',
+    
     ], 'client');
 
   api.add_files([
