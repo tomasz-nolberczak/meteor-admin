@@ -1,24 +1,44 @@
 <template name="AdminDashboardSettings">
-	<div id="admin-settings-view">
-		<label for="adminDashboardLanguage">{{_ "settings.changeLanguageLabel"}}</label>
-		<select name="adminDashboardLanguage" id="adminDashboardLanguage" class="custom-select">
-			<option value="en">English</option>
-			<option value="pl">Polski</option>
-		</select>
-		<label for="adminDashboardSkin">{{_ "settings.changeSkinLabel"}}</label>
-		<select name="adminDashboardSkin" id="adminDashboardSkin" class="custom-select">
-			<option value="black">{{_ "adminSkinName.black" }}</option>
-			<option value="black-light">{{_ "adminSkinName.blackLight" }}</option>
-			<option value="blue">{{_ "adminSkinName.blue" }}</option>
-			<option value="blue-light">{{_ "adminSkinName.blueLight" }}</option>
-			<option value="green">{{_ "adminSkinName.green" }}</option>
-			<option value="green-light">{{_ "adminSkinName.greenLight" }}</option>
-			<option value="purple">{{_ "adminSkinName.purple" }}</option>
-			<option value="purple-light">{{_ "adminSkinName.purpleLight" }}</option>
-			<option value="red">{{_ "adminSkinName.red" }}</option>
-			<option value="red-light">{{_ "adminSkinName.redLight" }}</option>
-			<option value="yellow">{{_ "adminSkinName.yellow" }}</option>
-			<option value="yellow-light">{{_ "adminSkinName.yellowLight" }}</option>
-		</select>
+	<div class="row">
+		<div class="col-md-4">
+			<div class="box box-info">
+				<div class="box-header with-border">
+					<label for="adminDashboardLanguage">{{_ "settings.changeLanguageLabel"}}</label>
+				</div>
+				<div class="box-body">
+					<div class="form-group">
+						<select name="adminDashboardLanguage" id="adminDashboardLanguage" class="form-control">
+							<option value="en">English</option>
+							<option value="pl">Polski</option>
+						</select>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-4">
+			<div class="box box-info">
+				<div class="box-header with-border">
+					<label for="adminDashboardSkin">{{_ "settings.changeSkinLabel"}}</label>
+				</div>
+				<div class="box-body">
+					<div class="form-group">
+						<select name="adminDashboardSkin" id="adminDashboardSkin" class="form-control">
+							<option value="black">{{_ "adminSkinName.black" }}</option>
+							<option value="black-light">{{_ "adminSkinName.blackLight" }}</option>
+							<option value="blue">{{_ "adminSkinName.blue" }}</option>
+							<option value="blue-light">{{_ "adminSkinName.blueLight" }}</option>
+							<option value="green">{{_ "adminSkinName.green" }}</option>
+							<option value="green-light">{{_ "adminSkinName.greenLight" }}</option>
+							<option value="purple">{{_ "adminSkinName.purple" }}</option>
+							<option value="purple-light">{{_ "adminSkinName.purpleLight" }}</option>
+							<option value="red">{{_ "adminSkinName.red" }}</option>
+							<option value="red-light">{{_ "adminSkinName.redLight" }}</option>
+							<option value="yellow">{{_ "adminSkinName.yellow" }}</option>
+							<option value="yellow-light">{{_ "adminSkinName.yellowLight" }}</option>
+						</select>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
 </template>

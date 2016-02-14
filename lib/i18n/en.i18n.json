@@ -31,6 +31,7 @@
 	},
 
 	"templates": {
+		"noItemsHeader": "Can't see any items!",
 		"noItems": "There are no visible items in this collection.",
 		"addOne": "Add one",
 		"addUser": "Add User",
@@ -129,7 +130,7 @@
 		"usersLabel": "Users"
 	},
 
-	"templates": {
+	"templatesScript": {
 		"search": "Search",
 		"new": "New",
 		"edit": "Edit"

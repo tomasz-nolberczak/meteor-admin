@@ -28,6 +28,7 @@
 	},
 
 	"templates": {
+		"noItemsHeader": "Tu nic nie ma!",
 		"noItems": "Nie ma żadnych rekordów w tej kolekcji",
 		"addOne": "Dodaj",
 		"addUser": "Dodaj Użytkownika",

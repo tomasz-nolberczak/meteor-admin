@@ -53,10 +53,11 @@
 		{{#if hasDocuments}}
 			{{> tabular table=admin_table class="table dataTable"}}
 		{{else}}
-			<div class="alert alert-info">
+			<div class="callout callout-info">
+				<h4><i class="icon fa fa-info"></i> {{_ "templates.noItemsHeader"}}</h4>
 				<p>{{_ "templates.noItems"}}</p>
-				<p><a href="{{newPath}}" class="btn btn-primary"><i class="fa fa-plus"></i> {{_ "templates.addOne"}}</a></p>
 			</div>
+			<a href="{{newPath}}" class="btn btn-success"><i class="fa fa-plus"></i> {{_ "templates.addOne"}}</a>
 		{{/if}}
 	{{/if}}
 </template>
